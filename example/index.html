@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src="../dist/js/Biz.style.js"></script>
+</head>
+<body>
+<form name="example_form"  method="POST" class="form-horizontal">
+    
+    <div class="form-group">
+        <label for="req">必填字段:</label>
+        <input type="text" name="req" id="req" class="form-control" placeholder="必填" validate rules="required|min_length(8)" display="不能为空|至少输入8个字符，您输入的{{req}}长度少于8">
+    </div>
+
+    <div class="form-group">
+        <label for="alphanumeric">文字字数:</label>
+        <input type="text" name="alphanumeric" id="alphanumeric" class="form-control" placeholder="字数大于5，小于15" validate rules="regexp_customer" display="水">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="验证是否为Email">
+    </div>
+
+    <div class="form-group">
+        <label for="minlength">字符长度判断:</label>
+        <input type="text" name="minlength" id="minlength" class="form-control" placeholder="至少输入8个字符">
+    </div>
+
+    <div class="cleanfix"></div>
+
+    <div class="checkbox">
+        <label for="tos_checkbox">
+            <input name="tos_checkbox" id="" type="radio" value="11" validate rules="required" display="复选框一定要填"> 填(用于服务条款)
+            <input name="tos_checkbox" id="" type="radio" value="22"> 复选框必填(用于服务条款)
+            
+        </label>
+    </div>
+
+    <div class="error_msg" id="error_msg">这里提示错误消息</div>
+    
+    <button class="btn-default" type="submit" name="submit">提交按钮</button>
+    <script type="text/javascript">
+    // 自定义正则
+    Biz.Validate.addRules({
+    	regexp_customer: /\d+/
+    })
+	Biz.Validate('example_form', function (data, event) {
+		// 阻止表单提交
+		// event.preventDefault()
+		// 默认表单提交事件
+		console.log(data)
+	})
+    </script>
+</form>
+</body>
+</html>

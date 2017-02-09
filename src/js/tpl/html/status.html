@@ -1,0 +1,19 @@
+
+<div style="display:none;">
+    <div class="weui-mask_transparent"></div>
+    <% if(data.type == 'tip'){ %>
+        <div class="weui-tip">
+    <% }else{ %>
+        <div class="weui-toast">
+    <% } %>
+    	<% if(data.type == 'loading'){ %>
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content"><%= data.text || '数据加载中' %></p>
+        <% }else if(data.type == 'checked'){ %>
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+           	<p class="weui-toast__content"><%= data.text || '操作成功' %></p>
+        <% }else if(data.type == 'tip'){ %>
+            <p class="weui-tip__content"><%= data.text || '操作成功' %></p>
+       	<% } %>
+    </div>
+</div>

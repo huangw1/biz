@@ -1,0 +1,17 @@
+
+<% if(data.type == 'loading'){ %>
+<div class="J-loadmore">
+	<div class="weui-loadmore">
+	    <i class="weui-loading"></i>
+	    <span class="weui-loadmore__tips"><%= data.text || '加载中...' %></span>
+	</div>
+	<br>
+</div>
+<% }else{ %>
+<div class="J-loadmore">
+	<div class="weui-loadmore weui-loadmore_line">
+	    <span class="weui-loadmore__tips"><%= data.text || '暂无数据' %></span>
+	</div>
+	<br>
+</div>
+<% } %>
