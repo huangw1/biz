@@ -9,7 +9,6 @@ var Confirm = require('./confirm'),
 	Status = require('./status'),
 	Loadmore = require('./loadmore'),
 	Validate = require('./validate'),
-	node = require('./node'),
 	Route = require('./route')
 
 Biz.Confirm = function(data) {
@@ -27,8 +26,6 @@ Biz.Status = function(data) {
 Biz.Loadmore = function(data) {
 	return new Loadmore(data)
 }
-
-Biz.node = node
 
 Biz.Validate = Validate
 

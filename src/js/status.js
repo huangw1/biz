@@ -24,12 +24,10 @@ Status.prototype.show = function(during) {
 	if(this.options.type == 'loading') {
 		return
 	} else {
-		if(!during) {
-			setTimeout(this.close.bind(this), 1500)
-		}
+		setTimeout(this.close.bind(this), during || 1500)
 	}
 	return this
-},
+}
 // override
 Status.prototype.defaults = {
 	type: 'loading',
