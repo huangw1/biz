@@ -1,6 +1,6 @@
 // biz
 
-Biz = {}
+window.Biz = {}
 
 Biz.version = '1.0.0'
 
